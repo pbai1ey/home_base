@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import home, petitions
+from routers import home, petitions, about
 
 app = FastAPI(title="Homelab API")
 
@@ -13,6 +13,7 @@ app.add_middleware(
 
 app.include_router(home.router)
 app.include_router(petitions.router)
+app.include_router(about.router)
 
 
 @app.get("/")
